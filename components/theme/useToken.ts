@@ -68,6 +68,7 @@ const preserve: {
 };
 
 export const getComputedToken = (
+  // （包含用户传入的 alias token）
   originToken: SeedToken,
   overrideToken: DesignTokenProviderProps['components'] & {
     override?: Partial<AliasToken>;
@@ -86,7 +87,7 @@ export const getComputedToken = (
 
   // Format if needed
   mergedDerivativeToken = formatToken(mergedDerivativeToken);
-
+  // 生成组件 token
   if (components) {
     Object.entries(components).forEach(([key, value]) => {
       const { theme: componentTheme, ...componentTokens } = value;

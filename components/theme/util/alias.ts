@@ -11,6 +11,11 @@ type RawMergedToken = MapToken & OverrideToken & { override: Partial<AliasToken>
  * Seed (designer) > Derivative (designer) > Alias (developer).
  *
  * Merge seed & derivative & override token and generate alias token for developer.
+ * // 将 seed 和 map token 转化为共开发者使用访问的别名 token
+ * // seed 和 map token 可以理解为最基础、和次基础的 token 定义规范，基于此开发者在做一层抽象规范为 alias token，
+ * // alias token 是可以由 用户传入自定义的，在不同的场景中适当的使用，他们可能是相同的值，因为可能是源于同一个 token 的不同 alias token
+ * // 在 alias token 之下的 component token，则是基于每个组件专门的 token，在大多数情况下并不共用
+ *
  */
 export default function formatToken(derivativeToken: RawMergedToken): AliasToken {
   const { override, ...restToken } = derivativeToken;
