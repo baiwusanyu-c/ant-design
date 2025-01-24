@@ -37,9 +37,13 @@ export default function derivative(token: SeedToken): MapToken {
     );
 
   return {
+    // seedToken
     ...token,
+    // ************ 以下是生成 map token，由 seed token 和 defaultPresetColors派生
+    // 额外提供的颜色(已经生成颜色梯度)
     ...colorPalettes,
     // Colors
+    // 根据 seed 的颜色 token 生成 颜色 map token
     ...genColorMapToken(token, {
       generateColorPalettes,
       generateNeutralColorPalettes,

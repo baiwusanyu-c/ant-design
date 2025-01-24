@@ -13,6 +13,7 @@ export interface ColorMap {
   10: string;
 }
 
+// 梯度颜色 map
 export type GenerateColorMap = (baseColor: string) => ColorMap;
 export type GenerateNeutralColorMap = (
   bgBaseColor: string,

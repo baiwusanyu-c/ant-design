@@ -7,6 +7,7 @@ interface PaletteGenerators {
   generateNeutralColorPalettes: GenerateNeutralColorMap;
 }
 
+// 根据 seed 的颜色 token 生成 颜色 map token
 export default function genColorMapToken(
   seed: SeedToken,
   { generateColorPalettes, generateNeutralColorPalettes }: PaletteGenerators,

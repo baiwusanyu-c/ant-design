@@ -2,6 +2,7 @@ import { generate } from '@ant-design/colors';
 import type { GenerateColorMap, GenerateNeutralColorMap } from '../ColorMap';
 import { getAlphaColor, getSolidColor } from './colorAlgorithm';
 
+// 生成颜色面板（梯度颜色）
 export const generateColorPalettes: GenerateColorMap = (baseColor: string) => {
   const colors = generate(baseColor);
   return {
